@@ -1,16 +1,36 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="未経験からIT業界へ。フロントエンドとAWSを学習中のポートフォリオサイトです。">
+    <!-- OGP Tags -->
+    <meta property="og:title" content="Portfolio | [Your Name]">
+    <meta property="og:description" content="Webサイト制作・AWSインフラ構築学習中のポートフォリオ。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://via.placeholder.com/1200x630.png?text=Portfolio">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Portfolio | [Your Name]">
+    <meta name="twitter:description" content="Webサイト制作・AWSインフラ構築学習中のポートフォリオ。">
+
     <title>Portfolio | [Your Name]</title>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <nav>
             <div class="logo">PORTFOLIO</div>
-            <ul>
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-controls="nav-menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul id="nav-menu">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
@@ -21,69 +41,106 @@
 
     <main>
         <section class="hero">
+            <div class="hero-bg"></div>
             <div class="hero-content">
-                <h1>MY PORTFOLIO</h1>
+                <h1 class="typing">MY PORTFOLIO</h1>
                 <p class="tagline">Webサイトの作成とAWSの勉強</p>
+                <a href="#about" class="scroll-down" aria-label="Scroll down"><i
+                        class="fa-solid fa-chevron-down"></i></a>
             </div>
         </section>
 
-        <section id="about" class="container">
+        <section id="about" class="container reveal">
             <h2>About Me</h2>
             <div class="about-flex">
+                <div class="about-img">
+                    <img src="https://via.placeholder.com/200x200.png?text=Avatar" alt="My Avatar" loading="lazy">
+                </div>
                 <div class="about-text">
                     <p>未経験からIT業界への転職を目指し、現在はHTMLによるフロントエンド実装と、AWSを用いたインフラ構築を重点的に学習しています。</p>
-                    <p><strong>強み：</strong> 課題に対して論理的にアプローチし、解決するまでやり遂げる「粘り強さ」です。</p>
+                    <p><strong>強み：</strong>課題に対して論理的にアプローチし、解決するまでやり遂げる「粘り強さ」です。</p>
+                    <div class="social-links">
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter(X)"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Zenn"><i
+                                class="fa-solid fa-book"></i></a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="bg-light">
+        <section id="skills" class="bg-light reveal">
             <div class="container">
                 <h2>Skill Stack</h2>
                 <div class="skill-grid">
                     <div class="skill-card">
+                        <i class="fa-brands fa-html5 skill-icon"></i>
                         <h3>HTML / CSS</h3>
-                        <p>構造化された読みやすいコードと、レスポンシブデザインの実装が可能です。</p>
+                        <p class="skill-level">★★★★☆</p>
+                        <p>構造化された読みやすいコードと、レスポンシブデザインの実装が可能です。アニメーション実装も学習中です。</p>
                     </div>
                     <div class="skill-card">
+                        <i class="fa-brands fa-aws skill-icon"></i>
                         <h3>AWS</h3>
-                        <p>S3, CloudFrontを用いた静的サイトホスティング、EC2の基本操作を学習中です。</p>
+                        <p class="skill-level">★★★☆☆</p>
+                        <p>S3, CloudFrontを用いた静的サイトホスティング、EC2の基本操作、VPC周辺のネットワーク構築を学習中です。</p>
                     </div>
                     <div class="skill-card">
+                        <i class="fa-solid fa-screwdriver-wrench skill-icon"></i>
                         <h3>Tools</h3>
-                        <p>GitHub / VS Code / Figma</p>
+                        <p class="skill-level">★★★☆☆</p>
+                        <p>Git/GitHubでのバージョン管理、VS Codeを用いた手引き、Figmaからのデザインカンプ再現が可能です。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="projects" class="container">
+        <section id="projects" class="container reveal">
             <h2>Projects</h2>
             <div class="project-grid">
                 <div class="project-card">
-                    <div class="project-img">Project Image</div>
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/600x360.png?text=Portfolio+Site"
+                            alt="Portfolio Site Screenshot" loading="lazy">
+                        <div class="img-overlay">
+                            <a href="#" class="view-btn" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        </div>
+                    </div>
                     <div class="project-info">
                         <h3>Portfolio Site</h3>
-                        <p>このポートフォリオサイト自体です。AWS S3+CloudFrontで配信し、高速な表示を意識しました。</p>
-                        <a href="#" class="btn-sm">View GitHub</a>
+                        <p>このポートフォリオサイト自体です。AWS S3+CloudFrontで配信し、パフォーマンスとアクセシビリティを意識しました。</p>
+                        <div class="project-tags">
+                            <span>HTML5</span><span>CSS3</span><span>AWS</span>
+                        </div>
+                        <a href="#" class="btn-sm" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-github"></i> GitHub</a>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img">Architecture Diagram</div>
+                    <div class="project-img">
+                        <img src="https://via.placeholder.com/600x360.png?text=AWS+Architecture"
+                            alt="AWS Architecture Diagram" loading="lazy">
+                    </div>
                     <div class="project-info">
                         <h3>AWS Infrastructure</h3>
-                        <p>学習用に構築したWebサーバーの構成図。セキュリティグループの最適化にこだわりました。</p>
-                        <a href="#" class="btn-sm">Detail</a>
+                        <p>学習用に構築したWebサーバーの構成図。最小権限の原則に基づいたセキュリティグループの最適化にこだわりました。</p>
+                        <div class="project-tags">
+                            <span>AWS VPC</span><span>EC2</span><span>Security Group</span>
+                        </div>
+                        <a href="#" class="btn-sm" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-solid fa-link"></i> Detail</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="bg-dark text-white">
+        <section id="contact" class="bg-dark text-white reveal">
             <div class="container text-center">
                 <h2>Contact</h2>
                 <p>お仕事のご相談やお問い合わせは、以下のボタンからお願いいたします。</p>
-                <a href="mailto:your-email@example.com" class="btn">Email Me</a>
+                <a href="mailto:your-email@example.com" class="btn"><i class="fa-solid fa-envelope"></i> Email Me</a>
             </div>
         </section>
     </main>
@@ -91,5 +148,47 @@
     <footer>
         <p>&copy; 2026 [Your Name]. All Rights Reserved.</p>
     </footer>
+
+    <script>
+        // ハンバーガーメニューの制御
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+                navToggle.setAttribute('aria-expanded', String(!expanded));
+                navMenu.classList.toggle('open');
+            });
+
+            // リンククリックでメニューを閉じる
+            navMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navMenu.classList.remove('open');
+                });
+            });
+        }
+
+        // スクロール連動アニメーション (Intersection Observer)
+        const revealElements = document.querySelectorAll('.reveal');
+
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target); // 一度表示されたら監視をやめる（パフォーマンス最適化）
+                }
+            });
+        }, {
+            root: null,
+            threshold: 0.15, // 要素が15%見えたらアニメーション発火
+            rootMargin: "0px 0px -50px 0px"
+        });
+
+        // 監視対象を登録
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
 </body>
+
 </html>
